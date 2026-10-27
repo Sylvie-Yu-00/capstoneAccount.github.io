@@ -9,119 +9,108 @@ We are borrowing this template for use with the capstone program
 
 <html lang="en">
 <head>
-  <title>Sylvie Yu</title> <!-- EDIT YOUR NAME HERE -->
+  <title>Sylvie Yu</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-  <link href='https://fonts.googleapis.com/css?family=Oswald:700' rel='stylesheet' type='text/css'>
+  <link href="https://fonts.googleapis.com/css?family=Oswald:700" rel="stylesheet" type="text/css">
 </head>
 <body>
 
-
 <!-- Navigation -->
-	<nav class="navbar navbar-inverse navbar-static-top" role="navigation">
-	  <div class="container">
-		<div class="navbar-header">
-		  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-						<span class="sr-only">Toggle navigation</span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-					</button>
-		</div>
-
-		<!-- Collect the nav links, forms, and other content for toggling -->
-		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-		  <ul class="nav navbar-nav">
-				  <li><a href="index.html">Home</a></li>
-				  <li><a href="#projects">Projects</a></li> 
-				  <li><a href="resume.pdf">Resume</a></li> 
-		  </ul>
-		</div>
-	  </div>
-	</nav>
-  
-  <!-- Page Content -->
-    <div class="container">
-
-        <div class="row">
-
-            <!-- Entries Column -->
-            <div class="col-md-8" style="height: 100vh;">
-                
-                <!-- Main Image (UPDATE YOUR OWN PHOTO TO THE REPO!) -->
-                <img class="img-responsive" src="photo.jpg" alt=""><br>
-                
-		<!-- UPDATE THE TEXT BELOW HERE WITH YOUR OWN TEXT -->
-                <div style="margin-top:3%; text-align:justify;">
-					<!--
-					This is where you would introduce yourself. You might include links to things <a href="//google.com">RANDOM LINK TO GOOGLE</a>. You might have links to outside websites or things like your resume.
-					
-					You might also talk about groups that you have worked with (and perhaps link to them), and/or put your interests here!
-					
-					<p>The goal is to give potential employers some idea of who you are (to convince them that you are skilled, professional, and personable!) 
-					-->
-			
-			                <p> I'm a Master's Student in Biostatistics at the University of Washington. I have a Bachelor's degree in mathematics from Pomona College. My past experiences include an internship at Genentech where I developed and employed methodology for differential gene expression testing using paraffin embedded tissue; as well as a collaborative experience with the <a href="https://www.cff.org/researchers/therapeutics-development-network"> Therapeutics Development Network </a> supporting the design of randomized interventional trials for cystic fibrosis. </p>
-					
-					<p> I am broadly interested in Biostatistics and Data Science, and enjoy the process of engaging domain science, statistical models and programmatic data analysis. </p>
-			
-					<p> For more information about me, please check out my <a href="resume.pdf">resume</a>, or reach out via email or <a href="https://www.linkedin.com/in/noah-simon-04bb83bb">linkedin</a>.
-					
-                </div>
-            </div> 
-
-            <!-- Contact Info on the Sidebar -->
-            <div class="col-md-4">
-                <div style="font-family: 'Oswald', sans-serif; font-size: 32px;"><b>Sylvie Yu</b></div><br>
-                <p><b>yxy00@uw.edu</b><br>
-                <p>Biostatistics Master's Student<br>
-		<p> University of Washington <br>
-                </p>
-            </div>
-            
-            
-            <!-- Links on the Sidebar -->
-            <div class="col-md-4" style="margin-top:2%">
-              <dd><a href="https://www.linkedin.com/in/noah-simon-04bb83bb">LinkedIn</a></dd>
-            </div>
-            
-		
-		            <!-- Projects -->
-            <div class="col-md-8" style="height: 100vh;">    
-                <h2 id="projects">Projects</h2>
-		<strong>Differential expression analysis with paraffin embedded (FFPE) tissue</strong><br>
-                <ul>
-                <li> Developed methods and software (in R) to calculate gene expression from probe-level microarray data using FFPE tissue samples. </li>
-		<li> Collaborated with biomarker scientists and employed this method/software to identify differentially expressed genes in breast tumor tissue (as compared to healthy control tissue).</li>
-		</ul>
-		<strong>Comparison of Machine Learning (ML) Methods for Survival Data</strong><br>
-                <ul>
-                <li> Developed a simulation study to compare ML methods for predicting survival outcome. </li>
-		<li> Wrote parallelized code (and deployed on AWS EC2) to efficiently run simulation study.</li>
-		</ul>
-		<strong><a href = "https://github.com/nrs02004/Jiujitsu-ELO">Ranking Models for Jiujitsu Competitors</a></strong><br>
-                <ul>
-                <li> Developed R/C++ code for efficiently fitting penalized conditional logistic regression. </li>
-		<li> Applied this to a novel dataset with ~2.5k competitors and ~8k matches to identify top competitors.</li>
-		<li> Empirically explored the impact of tuning parameter selection in this problem. </li>
-		</ul>
-		    
-
-            </div>
-
-            
-        </div>
-
-
+<nav class="navbar navbar-inverse navbar-static-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
     </div>
-    <!-- /.container -->
-    
-    <!-- Other people may like it too! -->
-    <a style="color:#b5bec9;font-size:0.8em; float:right;" href="https://github.com/mavroudisv/plain-academic">Plain Academic</a> 
-    
-</body>
 
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="Xinyan%20Yu%20Resume.pdf">Resume</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Page Content -->
+<div class="container">
+  <div class="row">
+
+    <!-- Main content -->
+    <div class="col-md-8">
+      <img class="img-responsive" src="sylvie.jpg" alt="Sylvie Yu" style="max-width: 520px; width: 100%; height: auto;"><br>
+
+      <div style="margin-top:3%; text-align:justify;">
+        <p>
+          I'm a master's student in Biostatistics at the University of Washington, with a Data Science focus and a bachelor's degree in Medical Laboratory Science from Shanghai Jiao Tong University.
+        </p>
+
+        <p>
+          My experience spans pharmaceutical data science, clinical statistics, and biomedical research. At Pfizer, I worked on real-world patient retention modeling, pharmaceutical sales forecasting, and automated analytical reporting using Python, survival analysis, machine learning, and Dataiku.
+        </p>
+
+        <p>
+          I'm especially interested in biostatistics and data science applications in pharmaceuticals and healthcare, including survival analysis, clinical and real-world data analysis, forecasting, and quantitative decision support.
+        </p>
+
+        <p>
+          For more information, please see my <a href="Xinyan%20Yu%20Resume.pdf">resume</a> or connect with me on
+          <a href="https://www.linkedin.com/in/sylvie-yu-0498a1433">LinkedIn</a>.
+        </p>
+      </div>
+
+      <!-- Projects -->
+      <div style="margin-top:5%;">
+        <h2 id="projects">Projects</h2>
+
+        <strong>Patient Retention Modeling & Pharmaceutical Forecasting — Pfizer</strong><br>
+        <ul>
+          <li>Built Cox proportional hazards and accelerated failure time models in Python to analyze retention and dropout risk in a real-world patient support program.</li>
+          <li>Integrated Kaplan–Meier, survival regression, and LightGBM results to identify consistent risk signals and support patient risk stratification.</li>
+          <li>Improved pharmaceutical forecasting through anomaly adjustment, feature engineering, model comparison, and post-processing, reducing average monthly forecast error at the franchise level from 17% to 3% in project evaluations.</li>
+          <li>Developed reusable Python workflows and LLM-assisted HTML reporting pipelines for standardized analysis and handover.</li>
+        </ul>
+
+        <strong>Lipoprotein and Lipidomic Profiling in Acute Myocardial Infarction</strong><br>
+        <ul>
+          <li>Cleaned and analyzed clinical data for a 50-participant case-control study in R, including descriptive statistics, group comparisons, and multiple-testing correction.</li>
+          <li>Integrated lipoprotein subfraction, targeted fatty-acid, and lipidomic data to explore lipid-metabolism patterns associated with acute myocardial infarction.</li>
+        </ul>
+
+        <strong>Clinical Programming & Statistical Analysis for a Phase III Trial</strong><br>
+        <ul>
+          <li>Performed statistical programming in SAS on historical Phase III clinical trial data from approximately 1,000 participants.</li>
+          <li>Applied ANCOVA, stratified Cochran–Mantel–Haenszel tests, LOCF sensitivity analyses, and automated table generation for efficacy, baseline, and safety analyses.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Sidebar -->
+    <div class="col-md-4">
+      <div style="font-family: 'Oswald', sans-serif; font-size: 32px;"><b>Sylvie Yu</b></div><br>
+      <p><b>yxy00@uw.edu</b><br>
+      Biostatistics Master's Student<br>
+      University of Washington</p>
+
+      <div style="margin-top:2%">
+        <dd><a href="https://www.linkedin.com/in/sylvie-yu-0498a1433">LinkedIn</a></dd>
+        <dd><a href="Xinyan%20Yu%20Resume.pdf">Resume</a></dd>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<a style="color:#b5bec9;font-size:0.8em; float:right;" href="https://github.com/mavroudisv/plain-academic">Plain Academic</a>
+
+</body>
 </html>
