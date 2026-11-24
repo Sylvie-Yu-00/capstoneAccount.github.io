@@ -1,116 +1,474 @@
 <!DOCTYPE html>
 <!--
-    Plain-Academic by Vasilios Mavroudis
+    Based on Plain-Academic by Vasilios Mavroudis
     Released under the Simplified BSD License/FreeBSD (2-clause) License.
     https://github.com/mavroudisv/plain-academic
-
-We are borrowing this template for use with the capstone program
 -->
-
 <html lang="en">
 <head>
   <title>Sylvie Yu</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-  <link href="https://fonts.googleapis.com/css?family=Oswald:700" rel="stylesheet" type="text/css">
+
+  <style>
+    :root {
+      --green: #2f6b4f;
+      --green-dark: #214d39;
+      --green-soft: #eef5f0;
+      --text: #202522;
+      --muted: #66706a;
+      --border: #dde6e0;
+      --bg: #fbfcfb;
+      --card: #ffffff;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      font-size: 18px;
+      line-height: 1.7;
+    }
+
+    a {
+      color: var(--green);
+      text-decoration: none;
+    }
+
+    a:hover {
+      color: var(--green-dark);
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(1120px, calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    nav {
+      background: rgba(251, 252, 251, 0.95);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      backdrop-filter: blur(10px);
+    }
+
+    .nav-inner {
+      min-height: 68px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      font-size: 21px;
+      font-weight: 750;
+      letter-spacing: -0.02em;
+      color: var(--text);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      align-items: center;
+      font-size: 16px;
+      font-weight: 600;
+    }
+
+    .hero {
+      padding: 72px 0 58px;
+      display: grid;
+      grid-template-columns: minmax(0, 1.35fr) minmax(260px, 0.65fr);
+      gap: 64px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      color: var(--green-dark);
+      background: var(--green-soft);
+      padding: 6px 12px;
+      border-radius: 999px;
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      font-size: clamp(46px, 6vw, 68px);
+      line-height: 1.03;
+      margin: 0 0 18px;
+      letter-spacing: -0.045em;
+    }
+
+    .subtitle {
+      font-size: 23px;
+      line-height: 1.45;
+      color: #3f4943;
+      margin: 0 0 22px;
+      max-width: 760px;
+    }
+
+    .intro {
+      font-size: 18px;
+      color: var(--muted);
+      max-width: 780px;
+      margin-bottom: 30px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 11px 18px;
+      border-radius: 10px;
+      font-size: 16px;
+      font-weight: 700;
+      border: 1px solid var(--green);
+      transition: 0.15s ease;
+    }
+
+    .button.primary {
+      background: var(--green);
+      color: white;
+    }
+
+    .button.primary:hover {
+      background: var(--green-dark);
+      color: white;
+      transform: translateY(-1px);
+    }
+
+    .button.secondary {
+      background: transparent;
+      color: var(--green-dark);
+    }
+
+    .button.secondary:hover {
+      background: var(--green-soft);
+      transform: translateY(-1px);
+    }
+
+    .profile-wrap {
+      justify-self: end;
+      width: min(100%, 360px);
+    }
+
+    .profile-photo {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 22px;
+      box-shadow: 0 18px 45px rgba(33, 77, 57, 0.14);
+      border: 1px solid var(--border);
+    }
+
+    .contact-line {
+      margin-top: 16px;
+      color: var(--muted);
+      font-size: 15px;
+      text-align: center;
+    }
+
+    section {
+      padding: 58px 0;
+    }
+
+    .section-heading {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 24px;
+      margin-bottom: 26px;
+    }
+
+    h2 {
+      margin: 0;
+      font-size: 36px;
+      line-height: 1.2;
+      letter-spacing: -0.03em;
+    }
+
+    .section-note {
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .projects-grid {
+      display: grid;
+      gap: 22px;
+    }
+
+    .project-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 28px 30px;
+      box-shadow: 0 8px 24px rgba(31, 55, 42, 0.045);
+    }
+
+    .project-top {
+      display: flex;
+      justify-content: space-between;
+      gap: 24px;
+      align-items: flex-start;
+      margin-bottom: 12px;
+    }
+
+    .project-card h3 {
+      font-size: 24px;
+      line-height: 1.3;
+      margin: 0;
+      letter-spacing: -0.02em;
+    }
+
+    .project-context {
+      color: var(--green-dark);
+      font-size: 15px;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .project-card p {
+      margin: 0 0 14px;
+      color: #46514a;
+    }
+
+    .project-card ul {
+      margin: 12px 0 0;
+      padding-left: 22px;
+    }
+
+    .project-card li {
+      margin-bottom: 7px;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 18px;
+    }
+
+    .tag {
+      background: var(--green-soft);
+      color: var(--green-dark);
+      border-radius: 999px;
+      padding: 5px 10px;
+      font-size: 13px;
+      font-weight: 650;
+    }
+
+    .about {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+      padding-bottom: 74px;
+    }
+
+    .about-card {
+      border-top: 2px solid var(--green);
+      padding-top: 18px;
+    }
+
+    .about-card h3 {
+      margin: 0 0 10px;
+      font-size: 21px;
+    }
+
+    .about-card p {
+      color: var(--muted);
+      margin: 0;
+    }
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 28px 0 40px;
+      color: #818b85;
+      font-size: 13px;
+    }
+
+    @media (max-width: 800px) {
+      body { font-size: 17px; }
+
+      .nav-inner {
+        min-height: 62px;
+      }
+
+      .nav-links {
+        gap: 16px;
+        font-size: 14px;
+      }
+
+      .hero {
+        grid-template-columns: 1fr;
+        gap: 34px;
+        padding-top: 48px;
+      }
+
+      .profile-wrap {
+        justify-self: start;
+        width: min(100%, 320px);
+      }
+
+      .contact-line { text-align: left; }
+
+      .section-heading,
+      .project-top {
+        display: block;
+      }
+
+      .project-context {
+        display: block;
+        margin-top: 6px;
+      }
+
+      .about {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 </head>
+
 <body>
-
-<!-- Navigation -->
-<nav class="navbar navbar-inverse navbar-static-top" role="navigation">
-  <div class="container">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-    </div>
-
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="Xinyan%20Yu%20Resume.pdf">Resume</a></li>
-      </ul>
-    </div>
-  </div>
-</nav>
-
-<!-- Page Content -->
-<div class="container">
-  <div class="row">
-
-    <!-- Main content -->
-    <div class="col-md-8">
-      <img class="img-responsive" src="sylvie.jpg" alt="Sylvie Yu" style="max-width: 520px; width: 100%; height: auto;"><br>
-
-      <div style="margin-top:3%; text-align:justify;">
-        <p>
-          I'm a master's student in Biostatistics at the University of Washington, with a Data Science focus and a bachelor's degree in Medical Laboratory Science from Shanghai Jiao Tong University.
-        </p>
-
-        <p>
-          My experience spans pharmaceutical data science, clinical statistics, and biomedical research. At Pfizer, I worked on real-world patient retention modeling, pharmaceutical sales forecasting, and automated analytical reporting using Python, survival analysis, machine learning, and Dataiku.
-        </p>
-
-        <p>
-          I'm especially interested in biostatistics and data science applications in pharmaceuticals and healthcare, including survival analysis, clinical and real-world data analysis, forecasting, and quantitative decision support.
-        </p>
-
-        <p>
-          For more information, please see my <a href="Xinyan%20Yu%20Resume.pdf">resume</a> or connect with me on
-          <a href="https://www.linkedin.com/in/sylvie-yu-0498a1433">LinkedIn</a>.
-        </p>
-      </div>
-
-      <!-- Projects -->
-      <div style="margin-top:5%;">
-        <h2 id="projects">Projects</h2>
-
-        <strong>Patient Retention Modeling & Pharmaceutical Forecasting — Pfizer</strong><br>
-        <ul>
-          <li>Built Cox proportional hazards and accelerated failure time models in Python to analyze retention and dropout risk in a real-world patient support program.</li>
-          <li>Integrated Kaplan–Meier, survival regression, and LightGBM results to identify consistent risk signals and support patient risk stratification.</li>
-          <li>Improved pharmaceutical forecasting through anomaly adjustment, feature engineering, model comparison, and post-processing, reducing average monthly forecast error at the franchise level from 17% to 3% in project evaluations.</li>
-          <li>Developed reusable Python workflows and LLM-assisted HTML reporting pipelines for standardized analysis and handover.</li>
-        </ul>
-
-        <strong>Lipoprotein and Lipidomic Profiling in Acute Myocardial Infarction</strong><br>
-        <ul>
-          <li>Cleaned and analyzed clinical data for a 50-participant case-control study in R, including descriptive statistics, group comparisons, and multiple-testing correction.</li>
-          <li>Integrated lipoprotein subfraction, targeted fatty-acid, and lipidomic data to explore lipid-metabolism patterns associated with acute myocardial infarction.</li>
-        </ul>
-
-        <strong>Clinical Programming & Statistical Analysis for a Phase III Trial</strong><br>
-        <ul>
-          <li>Performed statistical programming in SAS on historical Phase III clinical trial data from approximately 1,000 participants.</li>
-          <li>Applied ANCOVA, stratified Cochran–Mantel–Haenszel tests, LOCF sensitivity analyses, and automated table generation for efficacy, baseline, and safety analyses.</li>
-        </ul>
+  <nav>
+    <div class="container nav-inner">
+      <a class="brand" href="index.html">Sylvie Yu</a>
+      <div class="nav-links">
+        <a href="#projects">Projects</a>
+        <a href="Xinyan%20Yu%20Resume.pdf">Resume</a>
+        <a href="https://www.linkedin.com/in/sylvie-yu-0498a1433">LinkedIn</a>
       </div>
     </div>
+  </nav>
 
-    <!-- Sidebar -->
-    <div class="col-md-4">
-      <div style="font-family: 'Oswald', sans-serif; font-size: 32px;"><b>Sylvie Yu</b></div><br>
-      <p><b>yxy00@uw.edu</b><br>
-      Biostatistics Master's Student<br>
-      University of Washington</p>
-
-      <div style="margin-top:2%">
-        <dd><a href="https://www.linkedin.com/in/sylvie-yu-0498a1433">LinkedIn</a></dd>
-        <dd><a href="Xinyan%20Yu%20Resume.pdf">Resume</a></dd>
+  <main class="container">
+    <header class="hero">
+      <div>
+        <div class="eyebrow">Biostatistics · Data Science · Healthcare</div>
+        <h1>Sylvie Yu</h1>
+        <p class="subtitle">
+          M.S. student in Biostatistics at the University of Washington, interested in turning biomedical and real-world data into useful statistical evidence.
+        </p>
+        <p class="intro">
+          My background spans pharmaceutical data science, clinical statistics, and medical laboratory science. I have worked on survival analysis, forecasting, machine learning, clinical trial analysis, and biomedical research using Python, R, and SAS.
+        </p>
+        <div class="hero-actions">
+          <a class="button primary" href="Xinyan%20Yu%20Resume.pdf">View Resume</a>
+          <a class="button secondary" href="https://www.linkedin.com/in/sylvie-yu-0498a1433">LinkedIn</a>
+        </div>
       </div>
+
+      <div class="profile-wrap">
+        <img class="profile-photo" src="sylvie.jpg" alt="Sylvie Yu">
+        <div class="contact-line">University of Washington · Seattle, WA · yxy00@uw.edu</div>
+      </div>
+    </header>
+
+    <section id="projects">
+      <div class="section-heading">
+        <h2>Selected Projects</h2>
+        <span class="section-note">Healthcare, statistics, and applied data science</span>
+      </div>
+
+      <div class="projects-grid">
+        <article class="project-card">
+          <div class="project-top">
+            <h3>Patient Retention Modeling & Pharmaceutical Forecasting</h3>
+            <span class="project-context">Pfizer · Data Science Internship</span>
+          </div>
+          <p>
+            Applied statistical and machine-learning methods to real-world pharmaceutical data, with projects spanning patient retention, forecasting, and automated analytical reporting.
+          </p>
+          <ul>
+            <li>Modeled patient retention and drop-off using Kaplan–Meier methods, Cox proportional hazards, accelerated failure time models, and LightGBM to identify consistent risk signals.</li>
+            <li>Improved a pharmaceutical forecasting workflow through anomaly adjustment, feature engineering, model comparison, and post-processing, reducing average monthly forecast error from 17% to 3% at the franchise level in project evaluations.</li>
+            <li>Built reusable Python workflows and LLM-assisted HTML reporting processes in Dataiku to standardize analysis, validation, and project handover.</li>
+          </ul>
+          <div class="tags">
+            <span class="tag">Python</span>
+            <span class="tag">Survival Analysis</span>
+            <span class="tag">LightGBM</span>
+            <span class="tag">Forecasting</span>
+            <span class="tag">Dataiku</span>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-top">
+            <h3>Lipoprotein & Lipidomic Profiling in Acute Myocardial Infarction</h3>
+            <span class="project-context">Undergraduate Thesis</span>
+          </div>
+          <p>
+            Investigated lipid-metabolism patterns associated with acute myocardial infarction by integrating clinical variables, lipoprotein subfractions, and lipidomic measurements.
+          </p>
+          <ul>
+            <li>Curated and analyzed data from a 50-participant case-control cohort, using appropriate parametric and nonparametric group comparisons in R.</li>
+            <li>Applied multiple-testing correction and integrated targeted fatty-acid, lipoprotein, and untargeted lipidomic results to characterize exploratory disease-associated patterns.</li>
+          </ul>
+          <div class="tags">
+            <span class="tag">R</span>
+            <span class="tag">Biomedical Data</span>
+            <span class="tag">Lipidomics</span>
+            <span class="tag">Multiple Testing</span>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-top">
+            <h3>Statistical Programming for a Phase III Randomized Clinical Trial</h3>
+            <span class="project-context">Clinical Statistics Training Project</span>
+          </div>
+          <p>
+            Recreated key statistical analyses for a historical multicenter, double-blind Phase III acne trial with approximately 1,000 participants.
+          </p>
+          <ul>
+            <li>Programmed efficacy, baseline, and safety analyses in SAS using ANCOVA and stratified Cochran–Mantel–Haenszel methods.</li>
+            <li>Implemented LOCF-based sensitivity analyses and automated tables, figures, and listings to mirror common clinical-trial reporting workflows.</li>
+          </ul>
+          <div class="tags">
+            <span class="tag">SAS</span>
+            <span class="tag">Clinical Trials</span>
+            <span class="tag">ANCOVA</span>
+            <span class="tag">CMH</span>
+            <span class="tag">TFLs</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="about">
+      <div class="about-card">
+        <h3>Current focus</h3>
+        <p>
+          Developing a stronger foundation in statistical inference, causal reasoning, and statistical computing while pursuing applied work in healthcare and pharmaceutical data science.
+        </p>
+      </div>
+      <div class="about-card">
+        <h3>Background</h3>
+        <p>
+          B.S. in Medical Laboratory Science from Shanghai Jiao Tong University, with experience across pharmaceutical analytics, clinical laboratory medicine, and biomedical research.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      © 2026 Sylvie Yu · Based on the Plain Academic template.
     </div>
-
-  </div>
-</div>
-
-<a style="color:#b5bec9;font-size:0.8em; float:right;" href="https://github.com/mavroudisv/plain-academic">Plain Academic</a>
-
+  </footer>
 </body>
 </html>
