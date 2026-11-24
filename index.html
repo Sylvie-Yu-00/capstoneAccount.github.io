@@ -271,6 +271,39 @@
       font-weight: 650;
     }
 
+    .publication-card {
+      background: linear-gradient(135deg, #ffffff 0%, var(--green-soft) 100%);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 28px 30px;
+      box-shadow: 0 8px 24px rgba(31, 55, 42, 0.045);
+    }
+
+    .publication-card h3 {
+      font-size: 24px;
+      line-height: 1.35;
+      margin: 0 0 10px;
+      letter-spacing: -0.02em;
+    }
+
+    .publication-authors {
+      color: #46514a;
+      margin: 0 0 8px;
+    }
+
+    .publication-venue {
+      color: var(--green-dark);
+      font-size: 15px;
+      font-weight: 700;
+      margin: 0;
+    }
+
+    .publication-note {
+      margin-top: 14px;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
     .about {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -348,6 +381,7 @@
       <a class="brand" href="index.html">Sylvie Yu</a>
       <div class="nav-links">
         <a href="#projects">Projects</a>
+        <a href="#publications">Publications</a>
         <a href="about.html">About Me</a>
         <a href="Xinyan%20Yu%20Resume.pdf">Resume</a>
         <a href="https://www.linkedin.com/in/sylvie-yu-0498a1433">LinkedIn</a>
@@ -448,6 +482,27 @@
           </div>
         </article>
       </div>
+    </section>
+
+
+    <section id="publications">
+      <div class="section-heading">
+        <h2>Publications & Research</h2>
+        <span class="section-note">Selected research output</span>
+      </div>
+
+      <article class="publication-card">
+        <h3>BayesEvolve: Uncertainty-Aware Sequential Decision-Making with LLMs</h3>
+        <p class="publication-authors">
+          Xuening Wu, Lei Li, Shanyu, Ziqi Shi, <strong>Xinyan Yu</strong>, Qianya Xu, Yin Shenqin
+        </p>
+        <p class="publication-venue">
+          NeurIPS 2026 Workshop · Mathematical Foundations and Operational Integration of ML for Uncertainty-Aware Decision-Making
+        </p>
+        <p class="publication-note">
+          Co-authored work on uncertainty-aware sequential decision-making with large language models.
+        </p>
+      </article>
     </section>
 
     <section class="about">
