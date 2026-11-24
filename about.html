@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>About Me · Sylvie Yu</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    :root {
+      --green: #2f6b4f;
+      --green-dark: #214d39;
+      --green-soft: #eef5f0;
+      --text: #202522;
+      --muted: #66706a;
+      --border: #dde6e0;
+      --bg: #fbfcfb;
+      --card: #ffffff;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      font-size: 18px;
+      line-height: 1.7;
+    }
+
+    a { color: var(--green); text-decoration: none; }
+    a:hover { color: var(--green-dark); }
+
+    .container {
+      width: min(1120px, calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    nav {
+      background: rgba(251, 252, 251, 0.95);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      backdrop-filter: blur(10px);
+    }
+
+    .nav-inner {
+      min-height: 68px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      font-size: 21px;
+      font-weight: 750;
+      letter-spacing: -0.02em;
+      color: var(--text);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      align-items: center;
+      font-size: 16px;
+      font-weight: 600;
+    }
+
+    .hero {
+      padding: 70px 0 54px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 58px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      color: var(--green-dark);
+      background: var(--green-soft);
+      padding: 6px 12px;
+      border-radius: 999px;
+      font-size: 14px;
+      font-weight: 700;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      font-size: clamp(44px, 5.8vw, 66px);
+      line-height: 1.04;
+      letter-spacing: -0.045em;
+      margin: 0 0 20px;
+    }
+
+    .lead {
+      font-size: 22px;
+      line-height: 1.5;
+      color: #3f4943;
+      margin: 0 0 20px;
+    }
+
+    .hero-copy {
+      color: var(--muted);
+      margin: 0;
+    }
+
+    .life-photo {
+      width: 100%;
+      display: block;
+      border-radius: 22px;
+      border: 1px solid var(--border);
+      box-shadow: 0 18px 45px rgba(33, 77, 57, 0.13);
+    }
+
+    .caption {
+      margin-top: 10px;
+      color: #8a938e;
+      font-size: 13px;
+      text-align: right;
+    }
+
+    section { padding: 42px 0 72px; }
+
+    h2 {
+      font-size: 34px;
+      letter-spacing: -0.03em;
+      margin: 0 0 26px;
+    }
+
+    .interests {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 25px 27px;
+      box-shadow: 0 8px 22px rgba(31, 55, 42, 0.04);
+    }
+
+    .card .label {
+      color: var(--green-dark);
+      font-size: 14px;
+      font-weight: 750;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+      margin-bottom: 7px;
+    }
+
+    .card h3 {
+      font-size: 23px;
+      margin: 0 0 9px;
+      letter-spacing: -0.02em;
+    }
+
+    .card p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .closing {
+      margin-top: 36px;
+      padding: 28px 30px;
+      border-left: 4px solid var(--green);
+      background: var(--green-soft);
+      border-radius: 0 16px 16px 0;
+      color: #395446;
+      font-size: 19px;
+    }
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 28px 0 40px;
+      color: #818b85;
+      font-size: 13px;
+    }
+
+    @media (max-width: 800px) {
+      body { font-size: 17px; }
+      .nav-links { gap: 14px; font-size: 14px; flex-wrap: wrap; justify-content: flex-end; }
+      .hero { grid-template-columns: 1fr; gap: 32px; padding-top: 46px; }
+      .interests { grid-template-columns: 1fr; }
+      .caption { text-align: left; }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="container nav-inner">
+      <a class="brand" href="index.html">Sylvie Yu</a>
+      <div class="nav-links">
+        <a href="index.html#projects">Projects</a>
+        <a href="about.html">About Me</a>
+        <a href="Xinyan%20Yu%20Resume.pdf">Resume</a>
+        <a href="https://www.linkedin.com/in/sylvie-yu-0498a1433">LinkedIn</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container">
+    <header class="hero">
+      <div>
+        <div class="eyebrow">Beyond the data</div>
+        <h1>A little more about me.</h1>
+        <p class="lead">
+          I love statistics, but I also care a lot about making room for a full life outside of school and work.
+        </p>
+        <p class="hero-copy">
+          When I am not working on a model or staring at R output, I am probably cooking something, listening to classical music, planning a trip, building LEGO, or finding an excuse to go to Disney. I like hobbies that are either very hands-on or completely absorbing—the kind that make a few hours disappear.
+        </p>
+      </div>
+
+      <div>
+        <img class="life-photo" src="about-dog.jpg" alt="Sylvie spending time with a dog">
+        <div class="caption">One of the better ways to spend a sunny afternoon.</div>
+      </div>
+    </header>
+
+    <section>
+      <h2>Things I enjoy</h2>
+
+      <div class="interests">
+        <article class="card">
+          <div class="label">Cooking</div>
+          <h3>Especially Chinese food</h3>
+          <p>
+            Cooking is one of my favorite ways to unwind. I especially enjoy Chinese cooking—recreating familiar flavors, trying new dishes, and making food for people I care about.
+          </p>
+        </article>
+
+        <article class="card">
+          <div class="label">Music</div>
+          <h3>Classical music & piano</h3>
+          <p>
+            Classical music has been a long-running part of my life. Rachmaninoff and Tchaikovsky are particular favorites, and I also play the piano when I want to disappear into a piece for a while.
+          </p>
+        </article>
+
+        <article class="card">
+          <div class="label">Making things</div>
+          <h3>LEGO, one tiny piece at a time</h3>
+          <p>
+            I genuinely enjoy the very specific satisfaction of turning hundreds of tiny pieces into something coherent. It is structured, visual, and strangely relaxing.
+          </p>
+        </article>
+
+        <article class="card">
+          <div class="label">Exploring</div>
+          <h3>Travel & Disney</h3>
+          <p>
+            I love traveling for the mix of food, scenery, culture, and small surprises that do not fit into an itinerary. I also have a very real soft spot for Disney and will happily make room for it in a trip.
+          </p>
+        </article>
+      </div>
+
+      <div class="closing">
+        I like doing serious work without making work the entirety of life. For me, a good life has room for curiosity, good food, music, travel, people I love, and plenty of things that are simply fun.
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">© 2026 Sylvie Yu</div>
+  </footer>
+</body>
+</html>
